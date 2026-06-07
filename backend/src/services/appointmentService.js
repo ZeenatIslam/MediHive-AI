@@ -4,12 +4,13 @@ const Appointment = require(
 
 const createAppointment =
   async ({
-     appointmentId,
+    appointmentId,
     patientName,
     patientPhone,
     symptoms,
     doctor,
     triage,
+    status,
   }) => {
     const queueNumber =
       triage.emergency
@@ -42,6 +43,8 @@ const createAppointment =
         queueNumber,
 
         estimatedWaitTime,
+
+        status: status || "Pending",
       });
 
     doctor.currentQueueLoad += 1;

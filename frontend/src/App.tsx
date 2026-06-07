@@ -8,6 +8,7 @@ import Settings from './elements/Settings'
 import { Routes, Route } from "react-router-dom"
 import Emergency from './elements/Emergency'
 import BedManagement from './elements/BedManagement'
+import Assistant from './elements/Assistant'
 import Layout from './Layout'
 export function App() {
   return (
@@ -16,17 +17,17 @@ export function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Dashboard />} />
-      //Outlet tabhi render karega jab child routes honge.
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="analytics" element={<Analytics />} />
+          {/* Clinical */}
           <Route path="appointments" element={<Appoinments />} />
           <Route path="doctors" element={<Doctors />} />
           <Route path="patients" element={<Patients />} />
           <Route path="reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="doctors" element={<Doctors />} />
           <Route path="emergency" element={<Emergency />} />
           <Route path="bedmanagement" element={<BedManagement />} />
+          <Route path="assistant" element={<Assistant />} />
         </Route>
       </Routes>
 

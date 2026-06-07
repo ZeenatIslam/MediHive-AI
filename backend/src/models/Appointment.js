@@ -14,7 +14,7 @@ const appointmentSchema =
 
       patientPhone: {
         type: String,
-        required: true,
+        default: '',
       },
 
       symptoms: [String],

@@ -1,130 +1,102 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import {
-  Sidebar,
-  SidebarMenu,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarHeader,
-  SidebarGroupLabel,
-  SidebarGroupAction,
-  SidebarGroupContent,
-  SidebarMenuItem,
-  SidebarMenuButton
-} from "../components/ui/sidebar"
-import { useSidebar } from "../components/ui/sidebar"
-import {
-  LayoutDashboard,
-  Users,
-  Calendar,
-  FileText,
-  Settings,MedalIcon,
-  BedIcon,
-  AlertCircle,
-  ArrowDownAZ
-} from "lucide-react"
+  IconLayoutDashboard,
+  IconUsers,
+  IconUrgent,
+  IconStethoscope,
+  IconCalendar,
+  IconFileText,
+  IconBed,
+  IconChartBar,
+  IconSettings,
+  IconRobot,
+  IconActivityHeartbeat,
+} from '@tabler/icons-react'
 
-import { Link } from 'react-router-dom'
+const NAV = [
+  {
+    section: 'Overview',
+    items: [
+      { title: 'Dashboard', url: '/dashboard', icon: IconLayoutDashboard },
+    ],
+  },
+  {
+    section: 'Clinical',
+    items: [
+      { title: 'Patients', url: '/patients', icon: IconUsers },
+      { title: 'Emergency', url: '/emergency', icon: IconUrgent, badge: true },
+      { title: 'Doctors', url: '/doctors', icon: IconStethoscope },
+      { title: 'Appointments', url: '/appointments', icon: IconCalendar },
+    ],
+  },
+  {
+    section: 'Management',
+    items: [
+      { title: 'Reports', url: '/reports', icon: IconFileText },
+      { title: 'Bed Management', url: '/bedmanagement', icon: IconBed },
+      { title: 'Analytics', url: '/analytics', icon: IconChartBar },
+    ],
+  },
+  {
+    section: 'System',
+    items: [
+      { title: 'Settings', url: '/settings', icon: IconSettings },
+      { title: 'AI Assistant', url: '/assistant', icon: IconRobot },
+    ],
+  },
+]
+
 const AppSidebar = () => {
-  const {
-    state,
-    open,
-    setOpen,
-    openMobile,
-    setOpenMobile,
-    isMobile,
-    toggleSidebar,
-  } = useSidebar()
+  const { pathname } = useLocation()
 
-  const items = [
-    {
-      title: "Dashboard",
-      url: "dashboard",
-      icon: LayoutDashboard,
-    },
-    {
-      title: "Patients",
-      url: "patients",
-      icon: Users,
-    },
-    {
-      title:"Emergency",
-      url:"emergency",
-      icon:AlertCircle,
-    },
-    {
-      title: "Doctors",
-      url: "doctors",
-      icon: MedalIcon,
-    },
-    {
-      title: "Appointments",
-      url: "appointments",
-      icon: Calendar,
-    },
-    {
-      title: "Reports",
-      url: "reports",
-      icon: FileText,
-    },
-    {
-      title:"Bed Management",
-      url:"bedmanagement",
-      icon:BedIcon,
-    },
-    {
-      title:"Analytics",
-      url:"analytics",
-      icon:ArrowDownAZ,
-
-    },
-    {
-      title: "Settings",
-      url: "settings",
-      icon: Settings,
-    }
-  ]
   return (
-    <Sidebar>
-       <SidebarHeader className="border-b p-4">
-        <h2 className="text-xl font-bold">
-          Hospital AI
-        </h2>
-      </SidebarHeader>
-     
+    <aside className="sidebar">
+      <div className="logo">
+        <div className="logo-mark">
+          <div className="logo-icon">
+            <IconActivityHeartbeat size={18} />
+          </div>
+          <div>
+            <div className="logo-text">MediCore</div>
+            <div className="logo-sub">Hospital System</div>
+          </div>
+        </div>
+      </div>
 
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupAction>
-          </SidebarGroupAction>
-          <SidebarGroupContent>
-            <SidebarMenu className=''>
-              {
-                items.map((item)=>(
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                     <Link to={item.url}>
-                     <item.icon className='w-5 h-5'/>
-                     <span>{item.title}</span>
-                     </Link>
-                    </SidebarMenuButton>
+      <nav className="nav">
+        {NAV.map(({ section, items }) => (
+          <React.Fragment key={section}>
+            <div className="nav-section">{section}</div>
+            {items.map(({ title, url, icon: Icon, badge }) => {
+              const active = pathname === url || (url !== '/' && pathname.startsWith(url))
+              return (
+                <Link
+                  key={url}
+                  to={url}
+                  className={`nav-item${active ? ' active' : ''}`}
+                >
+                  <Icon size={16} />
+                  {title}
+                  {badge && <span className="nav-badge">3</span>}
+                </Link>
+              )
+            })}
+          </React.Fragment>
+        ))}
+      </nav>
 
-                  </SidebarMenuItem>
-                ))
-              }
-
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup />
-        <SidebarGroup />
-      </SidebarContent>
-      
-      <SidebarFooter className="border-t p-4">
-        Admin Panel
-      </SidebarFooter>
-    </Sidebar>
+      <div className="nav-bottom">
+        <div className="doctor-row" style={{ padding: 0 }}>
+          <div className="doc-avatar" style={{ background: '#e8f1fc', color: '#1a6fd4' }}>AD</div>
+          <div className="doc-info">
+            <div className="doc-name">Dr. Admin</div>
+            <div className="doc-dept">Administrator</div>
+          </div>
+          <div className="status-dot on" />
+        </div>
+      </div>
+    </aside>
   )
 }
 
