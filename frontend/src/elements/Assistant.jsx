@@ -115,7 +115,7 @@ export default function Assistant() {
 
         <div style={{padding:'10px 14px',borderTop:'0.5px solid #e4e6ea',display:'flex',gap:8,alignItems:'flex-end',flexShrink:0}}>
           <textarea
-            className="inp"
+            className="inp  chat-input"
             style={{flex:1,resize:'none',maxHeight:120,minHeight:36}}
             rows={1}
             value={input}

@@ -63,9 +63,9 @@ export default function Doctors() {
           </div>
 
           {showForm && (
-            <div style={{marginBottom:12,padding:'12px',background:'#f7f8fa',borderRadius:6,border:'0.5px solid #e4e6ea'}}>
+            <div className="form-wrapper">
               {error && (
-                <div style={{fontSize:11,color:'#a32d2d',marginBottom:8,padding:'6px 10px',background:'#fdeaea',borderRadius:4,border:'0.5px solid #f7c1c1'}}>
+                <div className="form-wrapper">
                   {error}
                 </div>
               )}
