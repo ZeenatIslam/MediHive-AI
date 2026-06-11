@@ -35,7 +35,7 @@ export default function SignupForm() {
       setLoading(true);
 
       const res = await axios.post(
-        "https://medihive-ai-backend.onrender.com/api/auth/register",
+        "https://medihive-ai-backend-psbr.onrender.com/api/auth/register",
         {
           
           email: formData.email,
