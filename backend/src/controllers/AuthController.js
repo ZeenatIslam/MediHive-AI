@@ -163,7 +163,7 @@ exports.googleLogin = async (
     res.status(200).json({
       success: true,
       token,
-      user,
+
     })
   } catch (error) {
     console.error(error)

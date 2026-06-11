@@ -51,9 +51,6 @@ export function LoginForm({
       )
 
       localStorage.setItem("token", res.data.token)
-
-      console.log(res.data)
-      alert("Login Successful")
       navigate("/dashboard")
     } catch (error: any) {
       console.error(error)
