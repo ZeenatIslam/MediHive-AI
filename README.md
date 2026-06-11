@@ -145,7 +145,7 @@ Zeenat Islam
 Building an AI-native healthcare operations platform focused on intelligent patient triage, healthcare automation, and clinical workflow optimization.
 <img width="1920" height="1080" alt="Screenshot (97)" src="https://github.com/user-attachments/assets/7b0bf98b-1e12-4326-9b6b-2d89973ecf9e" />
 <img width="1920" height="1080" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/a88cc31c-82f6-4cbb-b246-1094d6b8b4c3" />
-<img width="1920" height="1080" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/bac9f448-38c4-4953-9063-3b5e84562ebd" />
+
 <img width="1920" height="1080" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/f6871c6b-c106-45df-b9f1-eaa2020f21ad" />
 
 <img width="1920" height="1080" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/390cfab3-0eaa-4818-8a2b-fee1f1e4e27a" />
