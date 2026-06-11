@@ -99,7 +99,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="stats-row">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-5 ">
         {[
           { icon: <IconUsers size={18}/>, val: analytics?.totalDoctors !== undefined ? patients.length || '—' : '—', label: 'Total Patients', trend: '+4.2% this week', cls: 'blue', trendCls: 'up' },
           { icon: <IconUrgent size={18}/>, val: analytics?.emergencyAppointments ?? '—', label: 'Emergency Cases', trend: 'Critical cases', cls: 'red', trendCls: 'dn' },
@@ -116,7 +116,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="row2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
         <div className="card">
           <div className="card-hdr">
             <span className="card-title"><IconRobot size={14} style={{color:'#1a6fd4'}}/>AI Insights</span>
@@ -217,7 +217,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="row3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-5">
         <div className="card">
           <div className="card-hdr"><span className="card-title">Patient Activity — Today</span></div>
           <div className="chart-wrap"><Line data={chartData} options={chartOptions}/></div>

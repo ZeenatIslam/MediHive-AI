@@ -68,7 +68,7 @@ export default function Emergency() {
 
   return (
     <>
-      <div className="stats-row" style={{gridTemplateColumns:'repeat(4,1fr)'}}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5" >
         {[
           { icon: <IconUrgent size={18}/>, val: analytics?.emergencyAppointments ?? queue.length, label: 'Active Emergencies', cls: 'red' },
           { icon: <IconClock size={18}/>, val: `${analytics ? Math.round((analytics.averageQueueLoad||0)*15) : 45} min`, label: 'Avg Wait Time', cls: 'amber' },
@@ -83,7 +83,7 @@ export default function Emergency() {
         ))}
       </div>
 
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 280px',gap:10}}>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
         <div className="card">
           <div className="card-hdr">
             <span className="card-title"><IconUrgent size={14} style={{color:'#e24b4a'}}/>Emergency Queue</span>

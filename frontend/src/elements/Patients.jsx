@@ -72,7 +72,7 @@ export default function Patients() {
   const filtered = patients.filter(p => p.fullName?.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <div className="section-row">
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
       <div style={{display:'flex',flexDirection:'column',gap:10}}>
         <div className="card">
           <div className="card-hdr">
@@ -207,7 +207,7 @@ export default function Patients() {
         </div>
       </div>
 
-      <div className="card" style={{alignSelf:'start',position:'sticky',top:0}}>
+      <div className="card w/3" style={{alignSelf:'start',position:'sticky',top:0,}}>
         <div className="card-hdr"><span className="card-title">Quick Stats</span></div>
         {[
           { label: 'Total registered', val: patients.length, color: '#1a6fd4' },
