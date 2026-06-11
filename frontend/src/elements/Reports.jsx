@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { IconFileText, IconUpload, IconRobot, IconPdf } from '@tabler/icons-react'
 
-const API = 'http://localhost:5000'
+const API = 'https://medihive-ai-backend-psbr.onrender.com'
 
 const SAMPLE_REPORTS = [
   { name: 'Blood Panel — John Doe', date: 'Jun 5, 2026', type: 'Lab', status: 'green' },

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { IconStethoscope, IconUserPlus, IconCalendar, IconX } from '@tabler/icons-react'
 
-const API = 'http://localhost:5000'
+const API = 'https://medihive-ai-backend-psbr.onrender.com'
 const DOC_COLORS = [
   { bg: '#e8f1fc', color: '#185fa5' }, { bg: '#eaf3de', color: '#3b6d11' },
   { bg: '#eeedfe', color: '#534ab7' }, { bg: '#fdeaea', color: '#a32d2d' },

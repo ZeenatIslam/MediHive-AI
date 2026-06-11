@@ -9,7 +9,7 @@ import { IconTrendingUp, IconUsers, IconClock, IconStarFilled, IconBrain, IconRe
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Filler, Tooltip, Legend)
 
-const API = 'http://localhost:5000'
+const API = 'https://medihive-ai-backend-psbr.onrender.com'
 
 const chartOpts = (yLabel = '') => ({
   responsive: true, maintainAspectRatio: false,

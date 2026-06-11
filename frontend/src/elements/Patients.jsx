@@ -4,7 +4,7 @@ import { IconUserPlus, IconTrash, IconSearch, IconUrgent } from '@tabler/icons-r
 
 const STATUSES = ['Pending', 'Scheduled', 'Completed', 'Cancelled']
 
-const API = 'http://localhost:5000'
+const API = 'https://medihive-ai-backend-psbr.onrender.com'
 const AVATAR_COLORS = [
   { bg: '#e8f1fc', color: '#185fa5' }, { bg: '#fdeaea', color: '#a32d2d' },
   { bg: '#eaf3de', color: '#3b6d11' }, { bg: '#eeedfe', color: '#534ab7' },

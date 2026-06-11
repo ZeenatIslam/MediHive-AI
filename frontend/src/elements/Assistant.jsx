@@ -30,7 +30,7 @@ export default function Assistant() {
     setInput('')
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/agent/chat', {
+      const response = await axios.post('https://medihive-ai-backend-psbr.onrender.com/api/agent/chat', {
         messages: nextMessages.filter((m, i) => !(i === 0 && m.role === 'assistant')),
       })
       setMessages([...nextMessages, {
