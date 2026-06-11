@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot (101)" src="https://github.com/user-attachments/assets/de062dae-f5ae-43a5-93f9-5a388ad009d3" />
 # MediHive AI · Agentic Healthcare Triage & Patient Management Platform · Built with Gemini AI
 
 MediHive AI is an AI-powered healthcare operations platform that helps hospitals and clinics automate patient triage, prioritize emergency cases, manage queues, and assist doctors with intelligent decision-making.
@@ -142,8 +143,10 @@ Patient Intake → AI Triage → Emergency Detection → Queue Assignment → Do
 Zeenat Islam
 
 Building an AI-native healthcare operations platform focused on intelligent patient triage, healthcare automation, and clinical workflow optimization.
+<img width="1920" height="1080" alt="Screenshot (97)" src="https://github.com/user-attachments/assets/7b0bf98b-1e12-4326-9b6b-2d89973ecf9e" />
+<img width="1920" height="1080" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/a88cc31c-82f6-4cbb-b246-1094d6b8b4c3" />
+<img width="1920" height="1080" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/bac9f448-38c4-4953-9063-3b5e84562ebd" />
+<img width="1920" height="1080" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/f6871c6b-c106-45df-b9f1-eaa2020f21ad" />
 
-<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/6807efdb-8b79-4ef7-a907-912e58078b56" />
-<img width="1920" height="1080" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/26c11d45-f043-4ab1-bc10-ccabebd49b3e" />
 <img width="1920" height="1080" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/390cfab3-0eaa-4818-8a2b-fee1f1e4e27a" />
 <img width="1920" height="1080" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/e59c2bbd-891b-4817-9db3-f024ac646aa2" />
