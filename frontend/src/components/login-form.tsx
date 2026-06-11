@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 
-import { GoogleLogin} from "@react-oauth/google"
+import { GoogleLogin } from "@react-oauth/google"
 type CredentialResponse = {
   credential?: string
   select_by?: string
@@ -28,7 +28,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -76,7 +76,7 @@ export function LoginForm({
       )
 
       localStorage.setItem("token", res.data.token)
-navigate("/dashboard")
+      navigate("/dashboard")
       console.log(res.data)
       alert("Google Login Successful")
     } catch (error: any) {
@@ -89,7 +89,7 @@ navigate("/dashboard")
     }
   }
 
-return (
+  return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
@@ -102,17 +102,17 @@ return (
           <form onSubmit={handleLogin} className="grid gap-5">
             <FieldGroup>
               <Field className="">
-                
+
                 <GoogleLogin
-                  onSuccess={handleGoogleSuccess }
+                  onSuccess={handleGoogleSuccess}
                   onError={() =>
                     console.log("Google Login Failed")
                   }
-                  
+
                 />
-                
+
               </Field>
-              
+
               <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
                 Or continue with
               </FieldSeparator>
@@ -124,7 +124,7 @@ return (
                   placeholder="m@example.com"
                   required
                   value={email}
-                  onChange={(e)=>setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Field>
               <Field>
@@ -137,11 +137,11 @@ return (
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required 
-                value={password}
+                <Input id="password" type="password" required
+                  value={password}
                   onChange={(e) =>
                     setPassword(e.target.value)
-                  }/>
+                  } />
               </Field>
               <Field>
                 <Button
@@ -153,7 +153,13 @@ return (
                     : "Login"}
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="#">Sign up</a>
+                  Don&apos;t have an account?{" "}
+                  <span
+                    onClick={() => navigate("/signup")}
+                    className="text-cyan-400 hover:text-cyan-300 cursor-pointer font-medium"
+                  >
+                    Sign up
+                  </span>
                 </FieldDescription>
               </Field>
             </FieldGroup>

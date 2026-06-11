@@ -11,9 +11,9 @@ import BedManagement from "./elements/BedManagement"
 import Assistant from "./elements/Assistant"
 import LoginPage from "./authentication/login"
 import ProtectedRoute from "./authentication/ProtectedRoute"
-
 import { Routes, Route } from "react-router-dom"
 import { Navigate } from "react-router-dom"
+import Register from "./authentication/Register"
 export function App() {
   return (
     <Routes>
@@ -21,6 +21,7 @@ export function App() {
 
       {/* Public Route */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<Register />} />
 
       {/* Protected Routes */}
       <Route
