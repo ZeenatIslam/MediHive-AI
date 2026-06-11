@@ -1,7 +1,7 @@
 const ai = require("../config/gemini");
 const { functionDeclarations, toolImplementations } = require("./tools");
 
-const MODEL = "gemini-2.5-flash";
+const MODEL = "gemini-3.1-flash-lite";
 const MAX_TURNS = 6;
 const MAX_RETRIES = 3;
 
@@ -37,7 +37,11 @@ Guidelines:
 - Booking is the ONLY action that needs confirmation. To BOOK an appointment you need the patient's full name, phone number, and symptoms. If any are missing, ask for them. Only call "book_appointment" after the user has explicitly confirmed all three.
 - When you book, summarize the outcome clearly: assigned doctor, department, severity, queue number, and estimated wait time.
 - Be concise and professional. Use short paragraphs or bullet points. You are assisting staff, not patients directly.
-- You are not a substitute for a licensed clinician's judgment; flag emergencies clearly.`;
+- You are not a substitute for a licensed clinician's judgment; flag emergencies clearly.
+=- If a medical report, prescription, discharge summary, scan, X-ray, PDF, or image is provided, call analyze_medical_report immediately.
+- Extract abnormalities, diagnoses, medications, risk factors, and recommendations.
+- Present findings in a structured clinical format.`
+
 
 // Convert the chat history coming from the API into Gemini "contents".
 const toContents = (messages = []) =>

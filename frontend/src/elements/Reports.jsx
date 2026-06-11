@@ -18,25 +18,56 @@ export default function Reports() {
   const [summary, setSummary] = useState('')
   const [error, setError] = useState('')
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-    if (!file) { setError('Please select a file'); return }
-    setError('')
-    setLoading(true)
-    setSummary('')
-    try {
-      const r = await axios.post(`${API}/api/agent/chat`, {
-        messages: [{ role: 'user', content: `Analyze this medical report file named "${file.name}" (size: ${(file.size/1024).toFixed(1)}KB). Provide a brief clinical summary including: likely report type, key findings to look for, and recommended follow-up actions. Be concise.` }]
-      })
-      setSummary(r.data?.reply || 'No summary available.')
-    } catch (err) {
-      setError('Analysis failed. Ensure backend is running.')
-    } finally {
-      setLoading(false)
-    }
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!file) {
+    setError("Please select a file");
+    return;
   }
 
-  const parseLines = (text) => text.split('\n').map(l => l.replace(/^[-*•\d.]+\s*/, '').trim()).filter(Boolean)
+  setLoading(true);
+  setError("");
+  setSummary("");
+
+  try {
+    const formData = new FormData();
+    formData.append("report", file);
+
+    const response = await axios.post(
+      `${API}/api/reports/upload-report`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    setSummary(response.data.analysis);
+  } catch (err) {
+  console.error("FULL ERROR:", err);
+
+  if (err.response) {
+    console.error("Backend Response:", err.response.data);
+    setError(JSON.stringify(err.response.data));
+  } else {
+    setError(err.message);
+  }
+}finally {
+    setLoading(false);
+  }
+};
+  const parseLines = (text) =>
+  text
+    .split('\n')
+    .map(l =>
+      l
+        .replace(/[{}[\]",]/g, '')
+        .replace(/^[-*•\d.]+\s*/, '')
+        .trim()
+    )
+    .filter(Boolean);
 
   return (
     <div className="section-row">

@@ -24,7 +24,7 @@ const assignDoctor = async (
         patientsToday: 1,
       });
     }
-
+    
     if (!doctor) {
       throw new Error(
         "Doctor Not Available"

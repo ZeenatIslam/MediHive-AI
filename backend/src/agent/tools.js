@@ -1,8 +1,9 @@
 const { Type } = require("@google/genai");
-
 const Doctor = require("../models/Doctor");
 const Appointment = require("../models/Appointment");
 const Patient = require("../models/Patient");
+const ai = require("../config/gemini");
+
 
 const { analyzeSymptoms, DEPARTMENTS } = require("../services/triageAgent");
 const { assignDoctor } = require("../services/doctorAssignmentService");
@@ -117,6 +118,50 @@ const toolImplementations = {
   get_expense_analytics: async () => {
     return await getExpenseSummary();
   },
+  analyze_medical_report: async ({ fileUri, mimeType }) => {
+    if (!fileUri || !mimeType) {
+      throw new Error("fileUri and mimeType are required.");
+    }
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: [
+        {
+          role: "user",
+          parts: [
+            {
+              fileData: {
+                fileUri,
+                mimeType,
+              },
+            },
+            {
+              text: `
+Analyze this medical report and return:
+
+1. Patient Summary
+2. Key Findings
+3. Abnormal Values
+4. Diagnoses Mentioned
+5. Medications Mentioned
+6. Clinical Concerns
+7. Recommended Follow-up
+
+Return valid JSON only.
+Do not wrap JSON in markdown.
+Do not include \`\`\`json or \`\`\`.
+
+            `,
+            },
+          ],
+        },
+      ],
+    });
+
+    return {
+      analysis: response.text,
+    };
+  },
 };
 
 // ---- Gemini function declarations (schemas the model sees) ----
@@ -135,6 +180,26 @@ const functionDeclarations = [
         },
       },
       required: ["symptoms"],
+    },
+  },
+  {
+    name: "analyze_medical_report",
+    description:
+      "Analyze uploaded medical reports, lab reports, prescriptions, discharge summaries, scans, and medical images.",
+    parameters: {
+      type: Type.OBJECT,
+      properties: {
+        fileUri: {
+          type: Type.STRING,
+          description: "Gemini uploaded file URI",
+        },
+        mimeType: {
+          type: Type.STRING,
+          description:
+            "File MIME type such as application/pdf or image/jpeg",
+        },
+      },
+      required: ["fileUri", "mimeType"],
     },
   },
   {

@@ -63,7 +63,7 @@ const Layout = () => {
               <IconMessage size={16} />
             </div>
             <span className="time-display">{time}</span>
-            <div className="avatar" title="Dr. Admin">AD</div>
+            <div className="avatar" title="Admin">AD</div>
           </div>
         </div>
         <div className="content">

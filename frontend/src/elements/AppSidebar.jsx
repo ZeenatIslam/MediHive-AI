@@ -58,7 +58,7 @@ const AppSidebar = () => {
             <IconActivityHeartbeat size={18} />
           </div>
           <div>
-            <div className="logo-text">MediCore</div>
+            <div className="logo-text">MediHive AI</div>
             <div className="logo-sub">Hospital System</div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const AppSidebar = () => {
         <div className="doctor-row" style={{ padding: 0 }}>
           <div className="doc-avatar" style={{ background: '#e8f1fc', color: '#1a6fd4' }}>AD</div>
           <div className="doc-info">
-            <div className="doc-name">Dr. Admin</div>
+            <div className="doc-name">Admin</div>
             <div className="doc-dept">Administrator</div>
           </div>
           <div className="status-dot on" />

@@ -144,7 +144,7 @@ export default function Emergency() {
             return (
               <div key={i} style={{background:s.bg,border:`0.5px solid ${s.border}`,borderRadius:6,padding:'10px 12px',marginBottom:8}}>
                 <div style={{fontSize:11,fontWeight:500,color:s.color,marginBottom:4}}>{a.name}</div>
-                <div style={{fontSize:11,color:'var(--color-text-primary)',lineHeight:1.5}}>{a.reply}</div>
+                <div style={{fontSize:11,color:'#0f172a',lineHeight:1.5}}>{a.reply}</div>
               </div>
             )
           })}
