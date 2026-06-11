@@ -22,6 +22,28 @@ Healthcare facilities often struggle with patient overcrowding, manual triage, a
 | Revenue Agent       | Analyzes treatment revenue, billing trends, and operational efficiency       | Business Intelligence      |
 | Analytics Agent     | Generates hospital performance insights and reports                          | Data Analysis & Reporting  |
 
+## workflow
+Patient
+   │
+   ▼
+Symptom Analysis Agent
+   │
+   ▼
+Triage & Severity Agent
+   │
+   ├── Emergency Detection Agent
+   │
+   ▼
+Department Routing Agent
+   │
+   ▼
+Appointment Scheduling Agent
+   │
+   ▼
+Report Analysis Agent
+   │
+   ▼
+AI Chat Assistant Agent
 
 ## Why this matters
 
@@ -121,5 +143,7 @@ Zeenat Islam
 
 Building an AI-native healthcare operations platform focused on intelligent patient triage, healthcare automation, and clinical workflow optimization.
 
-
-<img width="1920" height="1080" alt="Screenshot (60)" src="https://github.com/user-attachments/assets/7504ab22-e870-4476-8b3c-9bb1a84dd8a2" />
+<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/6807efdb-8b79-4ef7-a907-912e58078b56" />
+<img width="1920" height="1080" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/26c11d45-f043-4ab1-bc10-ccabebd49b3e" />
+<img width="1920" height="1080" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/390cfab3-0eaa-4818-8a2b-fee1f1e4e27a" />
+<img width="1920" height="1080" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/e59c2bbd-891b-4817-9db3-f024ac646aa2" />
