@@ -43,7 +43,7 @@ export function LoginForm({
       setLoading(true)
 
       const res = await axios.post(
-        "https://medihive-ai-backend.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         {
           email,
           password,
@@ -72,7 +72,7 @@ export function LoginForm({
   ) => {
     try {
       const res = await axios.post(
-        "https://medihive-ai-backend.onrender.com/api/auth/google",
+        "http://localhost:5000/api/auth/google",
         {
           credential: credentialResponse.credential,
         }
